@@ -1,0 +1,54 @@
+<header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+  <div class="mdl-layout__header-row">
+    <span class="mdl-layout-title">Screen Status : Screen 1 ( Enforcement Committee )</span>
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+      <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+        <i class="material-icons">search</i>
+      </label>
+      <div class="mdl-textfield__expandable-holder">
+        <input class="mdl-textfield__input" type="text" id="search">
+        <label class="mdl-textfield__label" for="search">Enter your query...</label>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+  <header class="demo-drawer-header">
+    <!-- <img src="images/user.jpg" class="demo-avatar"> -->
+    <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>
+    <div class="demo-avatar-dropdown">
+      <span>
+        <?php echo $_SESSION['user_id'] ?>
+      </span>
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </header>
+  <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-900">
+    <a class="mdl-navigation__link" href="dashboard.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+        role="presentation">home</i>Dashboard</a>
+    <a class="mdl-navigation__link" href="addnewcase.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+        role="presentation">event</i>Add To Causelist</a>
+    <a class="mdl-navigation__link" href="modifylist.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+        role="presentation">edit</i>Modify list</a>
+    <a class="mdl-navigation__link" href="publish_onscreen.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+        role="presentation">publish</i>Publish Causelist</a>
+    <a class="mdl-navigation__link" href="search_case.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+        role="presentation">person_search</i>Search Case</a>
+    <a class="mdl-navigation__link" href="?signout=true"><i class="mdl-color-text--blue-grey-400 material-icons"
+        role="presentation">logout</i>Sign Out</a>
+
+
+    <div class="mdl-layout-spacer"></div>
+    <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons"
+        role="presentation">non</i><span class="visuallyhidden">Help</span></a>
+  </nav>
+</div>
+
+<script>
+  document.querySelectorAll('a.mdl-navigation__link').forEach(function (item) {
+    if (item.href.split("/").pop() == window.location.pathname.split("/").pop().split("?")[0])
+      item.classList.add("mdl-navigation__link--current")
+  })
+</script>
